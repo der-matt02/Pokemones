@@ -1,4 +1,6 @@
-﻿namespace Pokemones
+﻿using Pokemones.Services;
+
+namespace Pokemones
 {
     public partial class MainPage : ContentPage
     {
@@ -7,18 +9,16 @@
         public MainPage()
         {
             InitializeComponent();
+            CargarData();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        public async void CargarData()
         {
-            count++;
+            PokemonServices poke_services = new PokemonServices();
+            var listado_pokemones = await poke_services.DevuelveListadoPokemones();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            ListaPokemones.ItemsSource = listado_pokemones;
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
 

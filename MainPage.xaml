@@ -7,17 +7,17 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <ListView x:Name="Lista Pokemones"
+            <ListView x:Name="ListaPokemones">
                 <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label>
-                            Text="{Binding name}"></Label>
-                    </ViewCell>
-                </DataTemplate>
-
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label
+                                Text="{Binding name}"></Label>
+                        </ViewCell>
+                    </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
