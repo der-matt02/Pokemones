@@ -11,9 +11,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label
-                                Text="{Binding name}"></Label>
+                            <StackLayout>
+                                <Label Text="{Binding name}"></Label>
+                                <Label Text="{Binding url}"></Label>
+                            </StackLayout>
+                           
                         </ViewCell>
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
